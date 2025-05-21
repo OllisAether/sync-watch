@@ -636,6 +636,7 @@ html, body, #app {
   background: #000;
   color: #efefef;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .title {
