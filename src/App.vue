@@ -643,6 +643,10 @@ html, body, #app {
   font-size: 3.5rem;
   font-weight: 400;
   transform: translateY(-.1em);
+  padding: 1rem 0;
+  width: fit-content;
+
+  text-shadow: 0 0 1rem #fff5;
 
   .v-toolbar-title__placeholder {
     overflow: visible !important;
@@ -687,10 +691,18 @@ html, body, #app {
   }
 
   .form {
+    position: relative;
     width: min-content;
+    overflow: visible;
+    z-index: 1;
+    background: #111;
 
     p {
       margin-bottom: 1rem;
+    }
+
+    .file-upload {
+      background: transparent;
     }
   }
 
@@ -704,6 +716,7 @@ html, body, #app {
   .player {
     height: 100%;
     width: 100%;
+    background: #000;
 
     video {
       width: 100%;
