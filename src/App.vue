@@ -370,7 +370,7 @@ function showPlayPauseOverlay() {
       </VAlert>
     </div>
 
-    <VCard v-if="!connected" rounded="lg" border>
+    <VCard v-if="!connected" rounded="lg" border class="form">
       <VToolbar color="transparent" border="b">
         <VToolbarTitle class="title">
           SyncWatch
@@ -378,6 +378,9 @@ function showPlayPauseOverlay() {
       </VToolbar>
 
       <VCardText>
+        <p>
+          Watch video files with your friends in sync.
+        </p>
         <VFileUpload
           class="mb-4 pa-4 file-upload"
           density="compact"
@@ -388,6 +391,9 @@ function showPlayPauseOverlay() {
           icon="mdi-play-box-outline"
           title="Select a video file"
         />
+        <p>
+          Everyone in the room will need to select the same video file.
+        </p>
         <VTextField
           class="mt-8"
           variant="outlined"
@@ -677,6 +683,14 @@ html, body, #app {
     .toast__alert {
       backdrop-filter: blur(0.5rem);
       background: #000a;
+    }
+  }
+
+  .form {
+    width: min-content;
+
+    p {
+      margin-bottom: 1rem;
     }
   }
 
