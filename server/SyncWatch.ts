@@ -65,11 +65,10 @@ export class SyncWatch extends DurableObject {
     const data = JSON.parse(message.toString())
     const roomId = this.ctx.getTags(ws).find(tag => tag.startsWith('ROOM_ID-'))?.replace('ROOM_ID-', '')
     if (!roomId) return
-    const clientId = this.ctx.getTags(ws).find(tag => tag.startsWith('ID-'))?.replace('ID-', '')
+    const clientId = this.ctx.getTags(ws).find(tag => tag.startsWith('ID-'))
     if (!clientId) return
+
     const clientName = this.rooms.get(roomId)?.clients.find(client => client.id === clientId)?.name || 'Anonymous'
-    // const clientId = this.ctx.getTags(ws)[0]
-    // const clientName = this.videoState.clients.find(client => client.id === clientId)?.name || 'Anonymous'
 
     const room = this.rooms.get(roomId)
     if (!room) return
@@ -104,7 +103,7 @@ export class SyncWatch extends DurableObject {
 
     const roomId = this.ctx.getTags(ws).find(tag => tag.startsWith('ROOM_ID-'))?.replace('ROOM_ID-', '')
     if (!roomId) return
-    const clientId = this.ctx.getTags(ws).find(tag => tag.startsWith('ID-'))?.replace('ID-', '')
+    const clientId = this.ctx.getTags(ws).find(tag => tag.startsWith('ID-'))
     if (!clientId) return
     const clientName = this.rooms.get(roomId)?.clients.find(client => client.id === clientId)?.name || 'Anonymous'
 
